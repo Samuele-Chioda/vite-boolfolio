@@ -1,7 +1,10 @@
 <template>
-    <div class="card">
+    <div class="project-card">
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
+        <router-link :to="{ name: 'project-show', params: { id: project.id } }">
+            <button class="btn btn-primary">Visualizza Dettagli</button>
+        </router-link>
     </div>
 </template>
 
@@ -17,16 +20,10 @@ export default {
 </script>
 
 <style scoped>
-.card {
+.project-card {
     border: 1px solid #ddd;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    color: black;
-}
-
-h2 {
-    margin: 0 0 8px;
 }
 </style>
